@@ -9,16 +9,16 @@ This framework can be used by QA Engineers for testing Native Mobile apps with a
  - Cucumber HTML report with screenshots
 
 # How to start 
- - Clone the project
- - Do ```bundle install```
- - In Support/caps/PlatformName.txt change the app path to your path (apps are attached to the root of this project)
- - For iOS is you run on real device please add the following to caps:
- - udid = udid of your device (can be found in iTunes when you connect the phone)
- - xcodeSigningId = "iPhone Developer" - or any other name you use
- - xcodeOrgId = Can be found in developer.apple.com - Membershit - Team ID
+ 1. Clone the project
+ 2. Do ```bundle install```
+ 3. In Support/caps/PlatformName.txt change the app path to your path (apps are attached to the root of this project)
+ 4. For iOS is you run on real device please add the following to caps:
+    * udid = udid of your device (can be found in iTunes when you connect the phone)
+    * xcodeSigningId = "iPhone Developer" - or any other name you use
+    * xcodeOrgId = Can be found in developer.apple.com - Membershit - Team ID
 
- - For running tests you can use rake tasks - as example
- - ```rake run_tests[android]```for Android platform
- - ```rake run_tests[ios]```for iOS platform
+ 5. For running tests you can use rake tasks - as example
+    * ```rake run_tests[android]```for Android platform
+    * ```rake run_tests[ios]```for iOS platform
  
- - to view HTML report copy Path from reports/mobile_report.html and paste it to any browser
+ 6. to view HTML report copy Path from reports/mobile_report.html and paste it to any browser
