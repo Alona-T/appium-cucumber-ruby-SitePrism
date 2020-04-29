@@ -1,0 +1,15 @@
+[caps]
+
+platformName = "iOS"
+app = "/Users/alona/Library/Developer/Xcode/DerivedData/Hello_World-ehcyjxzzptwswddbrdeszatbmvxw/Build/Products/Debug-iphonesimulator/Hello World.app"
+platformVersion = "13.4"
+automationName = 'XCUITest'
+locationServicesAuthorized = true
+newCommandTimeout = 10000
+deviceName = "iPhone 8"
+useNewWDA = true
+
+[appium_lib]
+server_url = "http://localhost:4723/wd/hub"
+wait = 20
+newCommandTimeout = 60

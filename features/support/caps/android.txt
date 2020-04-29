@@ -1,0 +1,11 @@
+[caps]
+platformName = 'Android'
+deviceName = 'R58M309XJ5L'
+app = '/Users/alona/Projects/appium-cucumber-ruby/TestApp.apk'
+automationName = 'UiAutomator2'
+autoGrantPermissions = true
+
+[appium_lib]
+server_url = "http://localhost:4723/wd/hub"
+wait = 20
+newCommandTimeout = 60
