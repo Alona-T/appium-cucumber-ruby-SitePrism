@@ -2,28 +2,16 @@ require 'rake'
 require 'json'
 require 'cucumber/rake/task'
 
-# task :run_tests, [:platform] do |_task, args|
-#   platform = args.platform.upcase
-
-#   ENV['PLATFORM'] = platform
-#   puts "<< Platform: #{args.platform} >>"
-#   mkdir_p(["./tmp", "./reports"], verbose: false)
-#   system "cucumber features/scenarios/*.feature" +
-#             # " --exclude features/pages/android" +
-#             " --format json --out=reports/mobile_run.json --format html --out=reports/mobile_report.html"
-
-# end
-
 Cucumber::Rake::Task.new(:android) do |features|
-  ENV['PLATFORM'] = "ANDROID"
-  features.cucumber_opts = "features/scenarios/*.feature --exclude features/pages/android --exclude features/step_definitions/ios_dashboard_steps.rb --format html --out=reports.html --format pretty --guess"
+  ENV['PLATFORM'] = "android"
+  features.cucumber_opts = "features/scenarios/*.feature --exclude features/pages/ios --exclude features/step_definitions/ios --format html --out=reports.html --format pretty --guess"
 
 end
 
-# Cucumber::Rake::Task.new(:ios) do |features|
-#   ENV['PLATFORM'] = "IOS"
-#   features.cucumber_opts = "features/scenarios/*.feature  --exclude features/pages/android --format json --out=reports/mobile_run.json --format html --out=reports/mobile_report.html --format pretty"
-# end
+Cucumber::Rake::Task.new(:ios) do |features|
+  ENV['PLATFORM'] = "ios"
+  features.cucumber_opts = "features/scenarios/*.feature  --exclude features/pages/android --exclude features/step_definitions/android --format html --out=reports.html --format pretty --guess"
+end
 
 task :clean do
   rm_rf "tmp"

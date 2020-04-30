@@ -3,6 +3,6 @@ end
 
 Then("Orders are present on the Orders tab") do
     # @app.dashboard.ok_button.visible?
-    @dash = DashAndroid.new(@test_data)
+    dash = DashIOS.new
     dash.first_element.displayed?
 end
