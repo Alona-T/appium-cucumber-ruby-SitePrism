@@ -3,14 +3,11 @@ require 'json'
 require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:android) do |features|
-  ENV['PLATFORM'] = "android"
-  features.cucumber_opts = "features/scenarios/*.feature --exclude features/pages/ios --exclude features/step_definitions/ios --format html --out=reports.html --format pretty --guess"
-
+  features.cucumber_opts = "features/scenarios/*.feature --exclude features/pages/ios --exclude features/step_definitions/ios --format html --out=reports.html --format pretty --guess PLATFORM=ANDROID"
 end
 
 Cucumber::Rake::Task.new(:ios) do |features|
-  ENV['PLATFORM'] = "ios"
-  features.cucumber_opts = "features/scenarios/*.feature  --exclude features/pages/android --exclude features/step_definitions/android --format html --out=reports.html --format pretty --guess"
+  features.cucumber_opts = "features/scenarios/*.feature --exclude features/pages/android --exclude features/step_definitions/android --format html --out=reports.html --format pretty --guess PLATFORM=IOS"
 end
 
 task :clean do
